@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" name="Suite" parallel="tests" >
+<suite thread-count="2" name="Suite" parallel="tests">
+    <listeners>
+        <listener class-name="report.AllureListener"/>
+        <!--        <listener class-name="screenshot.TestListener"/>-->
+    </listeners>
     <test name="com.FirstTest" parallel="methods" thread-count="5">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="FirstTest">
                 <methods>
-                    <include name="GOOGLE1" />
-                    <include name="GOOGLE2" />
-                    <include name="GOOGLE3" />
+                    <include name="GOOGLE1"/>
+                    <include name="GOOGLE2"/>
+                    <include name="GOOGLE3"/>
                 </methods>
             </class>
         </classes>
     </test> <!-- First Test -->
-    <test name="com.SecondTest"  parallel="methods" thread-count="5">
+    <test name="com.SecondTest" parallel="methods" thread-count="5">
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="SecondTest">
                 <methods>
-                    <include name="GOOGLE4" />
-                    <include name="YANDEX" />
+                    <include name="GOOGLE4"/>
+                    <include name="YANDEX"/>
                 </methods>
             </class>
         </classes>

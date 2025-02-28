@@ -1,3 +1,7 @@
+import io.qameta.allure.Allure;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,11 +22,14 @@ public class SecondTest extends BaseTest {
     }
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("User can log in with valid credentials")
     public void YANDEX() {
         WebDriver driver = DriverManager.getDriver();
         System.out.println("Yandex Test Started! " + "Thread Id: " + Thread.currentThread().getId());
         driver.navigate().to("http://www.yandex.com");
         System.out.println("Yandex Test's Page title is: " + driver.getTitle() + " " + "Thread Id: " + Thread.currentThread().getId());
+        Allure.step("Verify ...");
         Assert.assertEquals(driver.getTitle(), "Yandex");
         System.out.println("Yandex Test Ended! " + "Thread Id: " + Thread.currentThread().getId());
     }

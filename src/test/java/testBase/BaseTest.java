@@ -1,14 +1,16 @@
 package testBase;
 
 import org.testng.ITestContext;
-import org.testng.annotations.*;
-import screenshot.TestListener;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import utils.ConfigData;
 import utils.ConfigReader;
 
 import java.net.MalformedURLException;
 
-@Listeners(TestListener.class)
+//@Listeners({AllureListener.class, TestListener.class})
 public class BaseTest {
     private static ConfigData config = ConfigReader.getInstance().getConfig();
     public CapabilityFactory capabilityFactory = new CapabilityFactory();
