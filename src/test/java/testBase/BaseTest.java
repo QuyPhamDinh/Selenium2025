@@ -1,18 +1,16 @@
 package testBase;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import logging.SeleniumEventListener;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
+import screenshot.TestListener;
+import utils.ConfigData;
+import utils.ConfigReader;
 
+import java.net.MalformedURLException;
+
+@Listeners(TestListener.class)
 public class BaseTest {
-    // Declare ThreadLocal Driver (ThreadLocalMap) for Thread-Safe Tests
-    protected static ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
+    private static ConfigData config = ConfigReader.getInstance().getConfig();
     public CapabilityFactory capabilityFactory = new CapabilityFactory();
 
     @BeforeClass
@@ -25,31 +23,12 @@ public class BaseTest {
     @BeforeMethod
     @Parameters(value = {"browser"})
     public void setup(String browser) throws MalformedURLException {
-        // Create RemoteWebDriver
-        RemoteWebDriver baseDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-                capabilityFactory.getCapabilities(browser));
-
-        // Wrap with Event Listener for logging
-        WebDriver eventDriver = new EventFiringDecorator<>(new SeleniumEventListener()).decorate(baseDriver);
-
-        // Store the WebDriver in ThreadLocal
-        driverThread.set(eventDriver);
+        DriverManager.getDriver().manage().window().maximize();
     }
 
-    public WebDriver getDriver() {
-        return driverThread.get();
-    }
 
     @AfterMethod
     public void tearDown() {
-        if (getDriver() != null) {
-            getDriver().quit();
-        }
+        DriverManager.quitDriver();
     }
-
-    @AfterClass
-    public void terminate() {
-        driverThread.remove();
-    }
-
 }
