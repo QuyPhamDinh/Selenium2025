@@ -1,18 +1,18 @@
 package testBase;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
-import utils.ConfigData;
-import utils.ConfigReader;
+import pom.CookiesOverlay;
 
 import java.net.MalformedURLException;
 
 //@Listeners({AllureListener.class, TestListener.class})
 public class BaseTest {
-    private static ConfigData config = ConfigReader.getInstance().getConfig();
     public CapabilityFactory capabilityFactory = new CapabilityFactory();
 
     @BeforeClass
@@ -24,13 +24,19 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters(value = {"browser"})
-    public void setup(String browser) throws MalformedURLException {
-        DriverManager.getDriver().manage().window().maximize();
+    public void setup(String browser, ITestResult result) throws MalformedURLException {
+        System.out.println("---------------------------------------------Starting TEST " + result.getMethod().getMethodName());
+        WebDriver driver = DriverManager.getDriver();
+        driver.manage().window().maximize();
+        
+        CookiesOverlay cookiesOverlay = new CookiesOverlay(driver);
+        cookiesOverlay.clickAcceptCookies();
     }
 
 
     @AfterMethod
-    public void tearDown() {
+    public void tearDown(ITestResult result) {
+        System.out.println("---------------------------------------------Finish TEST " + result.getMethod().getMethodName());
         DriverManager.quitDriver();
     }
 }

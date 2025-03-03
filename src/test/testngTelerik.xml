@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Suite" parallel="tests">
+    <listeners>
+        <listener class-name="report.AllureListener"/>
+    </listeners>
+    <test name="testBase.telerikKendo.DropDownTest" parallel="methods" thread-count="1">
+        <parameter name="browser" value="local"/>
+        <classes>
+            <class name="testBase.telerikKendo.DropDownTest">
+                <methods>
+                    <include name="testDropDown"/>
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- First Test -->
+
+</suite> <!-- Suite -->

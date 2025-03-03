@@ -1,7 +1,9 @@
 package testBase;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import logging.SeleniumEventListener;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -44,14 +46,19 @@ public class DriverManager {
                     EdgeOptions edgeOptions = new EdgeOptions();
                     capabilities.merge(edgeOptions);
                     break;
+                case "local":
+
+                    WebDriverManager.chromedriver().setup();
+                    ChromeOptions chromeOptionsLocal = new ChromeOptions();
+                    capabilities.merge(chromeOptionsLocal);
+                    return new ChromeDriver(chromeOptionsLocal);
                 default:
                     throw new IllegalArgumentException("Unsupported browser: " + browser);
             }
 
             WebDriver remoteDriver = new RemoteWebDriver(new URL(gridUrl), capabilities);
             // Wrap with Event Listener for logging
-            WebDriver eventDriver = new EventFiringDecorator<>(new SeleniumEventListener()).decorate(remoteDriver);
-            return remoteDriver;
+            return new EventFiringDecorator<>(new SeleniumEventListener()).decorate(remoteDriver);
         } catch (MalformedURLException e) {
             throw new RuntimeException("Invalid Selenium Grid URL: " + gridUrl, e);
         }

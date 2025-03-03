@@ -1,6 +1,6 @@
 package utils;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public class Waiting {
 
-    private WebDriverWait wait;
+    private final WebDriverWait wait;
 
     public Waiting(WebDriver driver, int timeout) {
         wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
@@ -16,5 +16,35 @@ public class Waiting {
 
     public <T> T waitUntil(ExpectedCondition<T> expectedConditions) {
         return wait.until(expectedConditions);
+    }
+
+
+    public void waitForAngularRequestsToFinish() {
+        wait.until(new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                return (Boolean) js.executeScript(
+                        "return window.angular !== undefined && " +
+                                "window.angular.element(document).injector() !== undefined && " +
+                                "window.angular.element(document).injector().get('$http').pendingRequests.length === 0"
+                );
+            }
+        });
+    }
+
+
+    public void waitAndClick(By locator) {
+
+        wait.until(driver -> {
+            try {
+                WebElement element = driver.findElement(locator);
+                element.click(); // Attempt to click
+                return true; // Click successful, exit wait
+            } catch (ElementClickInterceptedException e) {
+                System.out.println("Click intercepted, retrying...");
+                return false; // Continue waiting and retrying
+            }
+        });
     }
 }
