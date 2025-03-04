@@ -3,15 +3,14 @@ package testBase;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import pom.CookiesOverlay;
+import report.AllureListener;
+import screenshot.TestListener;
 
 import java.net.MalformedURLException;
 
-//@Listeners({AllureListener.class, TestListener.class})
+@Listeners({AllureListener.class, TestListener.class})
 public class BaseTest {
     public CapabilityFactory capabilityFactory = new CapabilityFactory();
 
@@ -24,7 +23,7 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters(value = {"browser"})
-    public void setup(String browser, ITestResult result) throws MalformedURLException {
+    public void setup(@Optional("chrome") String browser, ITestResult result) throws MalformedURLException {
         System.out.println("---------------------------------------------Starting TEST " + result.getMethod().getMethodName());
         WebDriver driver = DriverManager.getDriver();
         driver.manage().window().maximize();

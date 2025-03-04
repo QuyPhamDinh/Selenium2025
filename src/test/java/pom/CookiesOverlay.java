@@ -18,7 +18,7 @@ public class CookiesOverlay extends BasePage {
 //        After trying wait for the above conditions it still throw ElementClickInterceptedException when clicked
 //        as it does not finish rendering
 //        then we must retry by ignoring this exception by a custom wait
-        wait.waitAndClick(cookiesAcceptButton);
+        wait.clickByIgnoringElementIntercepted(cookiesAcceptButton);
     }
 
     @Override

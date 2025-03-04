@@ -33,8 +33,13 @@ public class Waiting {
         });
     }
 
+    /**
+     * Try to click locator by ignoring ElementClickInterceptedException
+     *
+     * @param locator
+     */
 
-    public void waitAndClick(By locator) {
+    public void clickByIgnoringElementIntercepted(By locator) {
 
         wait.until(driver -> {
             try {

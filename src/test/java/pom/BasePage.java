@@ -28,23 +28,23 @@ public abstract class BasePage {
         goToPage();
     }
 
-    public void scrollToBottom() {
+    protected void scrollToBottom() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
     }
 
-    public void scrollToElementUsingActions(WebElement element) {
+    protected void scrollToElementUsingActions(WebElement element) {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).perform();
     }
 
-    public void scrollToElementUsingJS() {
+    protected void scrollToElementUsingJS() {
         WebElement element = driver.findElement(By.id("elementId"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
     }
 
-    public void waitForAngularReady(int timeoutInSeconds) {
+    protected void waitForAngularReady(int timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         ExpectedCondition<Boolean> angularLoad = new ExpectedCondition<Boolean>() {
             @Override
@@ -58,7 +58,7 @@ public abstract class BasePage {
         wait.until(angularLoad);
     }
 
-    public void waitForReadyState(int timeoutInSeconds) {
+    protected void waitForReadyState(int timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         ExpectedCondition<Boolean> readyState = new ExpectedCondition<Boolean>() {
             @Override
@@ -71,7 +71,7 @@ public abstract class BasePage {
     }
 
 
-    public void scrollUntilElementVisible(String centerPartLocator, String targetElementLocator, int maxScrolls) {
+    protected void scrollUntilElementVisible(String centerPartLocator, String targetElementLocator, int maxScrolls) {
         Actions actions = new Actions(driver);
         WebElement centerPart = driver.findElement(By.cssSelector(centerPartLocator));
         int scrollCount = 0;

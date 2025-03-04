@@ -4,15 +4,10 @@
     <listeners>
         <listener class-name="report.AllureListener"/>
     </listeners>
-    <test name="testBase.telerikKendo.DropDownTest" parallel="methods" thread-count="1">
-        <parameter name="browser" value="local"/>
-        <classes>
-            <class name="testBase.telerikKendo.DropDownTest">
-                <methods>
-                    <include name="testDropDown"/>
-                </methods>
-            </class>
-        </classes>
-    </test> <!-- First Test -->
+    <test name="testBase.telerikKendo" parallel="methods" thread-count="2">
 
+        <packages>
+            <package name="testBase.telerikKendo"/>
+        </packages>
+    </test> <!-- First Test -->
 </suite> <!-- Suite -->
