@@ -1,13 +1,11 @@
 package pom;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.time.Duration;
 import java.util.List;
 
 public class AngularDropDownPage extends BasePage {
@@ -45,14 +43,14 @@ public class AngularDropDownPage extends BasePage {
     }
 
     public void selectDropDown(String name) {
-        List<WebElement> dropdownItems = driver.findElements(By.cssSelector("kendo-list span"));
+        List<WebElement> elementList = driver.findElements(By.cssSelector("kendo-list span"));
+        List<WebElement> dropdownItems = wait.waitUntil(ExpectedConditions.visibilityOfAllElements(elementList));
 
         Actions action = new Actions(driver);
         for (WebElement item : dropdownItems) {
-            action.keyDown(Keys.DOWN);
             if (item.getText().equals(name)) {
-//                Without pause the dropdown items cannot have enough time to render then it cannot select the right element
-                action.pause(Duration.ofMillis(500)).moveToElement(item).click().perform();
+//                action.moveToElement(item).click().perform();
+                item.click();
                 break;
             }
 
