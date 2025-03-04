@@ -18,6 +18,8 @@ public abstract class BasePage {
     public BasePage() {
         driver = DriverManager.getDriver();
         goToPage();
+        CookiesOverlay cookiesOverlay = new CookiesOverlay(driver);
+        cookiesOverlay.clickAcceptCookies();
     }
 
     public BasePage(WebDriver driver) {

@@ -931,3 +931,31 @@
 2025-03-02 22:31:10 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Clicked on element: [[RemoteWebDriver: chrome on linux (555ec7c6c7181028faf2c875b31bb707)] -> css selector: kendo-dropdownlist .k-input-value-text]
 2025-03-02 22:31:13 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: kendo-dropdownlist .k-input-value-text
 2025-03-02 22:31:13 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Successfully found element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:01:19 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: div[class*='demoWrap']
+2025-03-03 10:01:19 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Successfully found element: By.cssSelector: div[class*='demoWrap']
+2025-03-03 10:01:19 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.xpath: //iframe[@title='Demo']
+2025-03-03 10:01:19 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Successfully found element: By.xpath: //iframe[@title='Demo']
+2025-03-03 10:01:19 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:01:19 [TestNG-test=testBase.telerikKendo.DropDownTest-1] ERROR logging.SeleniumEventListener - Error occurred in method: findElement - null
+2025-03-03 10:01:20 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:01:20 [TestNG-test=testBase.telerikKendo.DropDownTest-1] ERROR logging.SeleniumEventListener - Error occurred in method: findElement - null
+2025-03-03 10:01:21 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:01:21 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Successfully found element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:01:21 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to click on element: [[RemoteWebDriver: chrome on linux (06323667073d52d22dd1699d882f9d3b)] -> css selector: kendo-dropdownlist .k-input-value-text]
+2025-03-03 10:01:21 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Clicked on element: [[RemoteWebDriver: chrome on linux (06323667073d52d22dd1699d882f9d3b)] -> css selector: kendo-dropdownlist .k-input-value-text]
+2025-03-03 10:01:24 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:01:24 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Successfully found element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:03:22 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: div[class*='demoWrap']
+2025-03-03 10:03:22 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Successfully found element: By.cssSelector: div[class*='demoWrap']
+2025-03-03 10:03:22 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.xpath: //iframe[@title='Demo']
+2025-03-03 10:03:22 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Successfully found element: By.xpath: //iframe[@title='Demo']
+2025-03-03 10:03:22 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:03:22 [TestNG-test=testBase.telerikKendo.DropDownTest-1] ERROR logging.SeleniumEventListener - Error occurred in method: findElement - null
+2025-03-03 10:03:23 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:03:23 [TestNG-test=testBase.telerikKendo.DropDownTest-1] ERROR logging.SeleniumEventListener - Error occurred in method: findElement - null
+2025-03-03 10:03:24 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:03:24 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Successfully found element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:03:24 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to click on element: [[RemoteWebDriver: chrome on linux (5e22ba563e80e26be66558993e634088)] -> css selector: kendo-dropdownlist .k-input-value-text]
+2025-03-03 10:03:24 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Clicked on element: [[RemoteWebDriver: chrome on linux (5e22ba563e80e26be66558993e634088)] -> css selector: kendo-dropdownlist .k-input-value-text]
+2025-03-03 10:03:26 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Attempting to find element: By.cssSelector: kendo-dropdownlist .k-input-value-text
+2025-03-03 10:03:26 [TestNG-test=testBase.telerikKendo.DropDownTest-1] INFO  logging.SeleniumEventListener - Successfully found element: By.cssSelector: kendo-dropdownlist .k-input-value-text

@@ -1,6 +1,6 @@
 {
   "gridUrl": "http://localhost:4444/wd/hub",
-  "browser": "chrome",
+  "browser": "local",
   "environments": {
     "dev": "https://dev.example.com",
     "staging": "https://staging.example.com",

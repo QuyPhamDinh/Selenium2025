@@ -1,10 +1,5 @@
 package pom;
 
-//public class CookiesOverlay {
-//}
-//
-//import pom.BasePage;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

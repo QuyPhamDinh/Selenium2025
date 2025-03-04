@@ -28,7 +28,7 @@ public class BaseTest {
         System.out.println("---------------------------------------------Starting TEST " + result.getMethod().getMethodName());
         WebDriver driver = DriverManager.getDriver();
         driver.manage().window().maximize();
-        
+
         CookiesOverlay cookiesOverlay = new CookiesOverlay(driver);
         cookiesOverlay.clickAcceptCookies();
     }
