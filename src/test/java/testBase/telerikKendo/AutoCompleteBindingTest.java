@@ -10,7 +10,9 @@ import testBase.DriverManager;
 
 public class AutoCompleteBindingTest extends BaseTest {
 
+
     @Test
+        //(retryAnalyzer = Retry.class)
     void testAutoCompleteTextbox() {
         String inputText = "Ar";
 
@@ -19,6 +21,7 @@ public class AutoCompleteBindingTest extends BaseTest {
         Iframe iframe = new Iframe(DriverManager.getDriver());
         iframe.moveToIFrame();
 
+        Assert.fail();
         autoCompleteDataBinding.typeAutoCompleteTextbox(inputText);
         WebElement itemFocused = autoCompleteDataBinding.getItemFocused();
         Assert.assertTrue(itemFocused.getText().contains(inputText), "Text does not contain the expected substring!");

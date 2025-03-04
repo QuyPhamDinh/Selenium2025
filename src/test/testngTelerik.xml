@@ -3,7 +3,9 @@
 <suite thread-count="2" name="Suite" parallel="tests">
     <listeners>
         <listener class-name="report.AllureListener"/>
+        <listener class-name="testBase.MyAnnotationTransformer"/>
     </listeners>
+
     <test name="testBase.telerikKendo" parallel="methods" thread-count="2">
 
         <packages>
