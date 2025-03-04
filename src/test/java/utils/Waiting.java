@@ -14,7 +14,7 @@ public class Waiting {
         wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
     }
 
-    public <T> T waitUntil(ExpectedCondition<T> expectedConditions) {
+    public <T> T until(ExpectedCondition<T> expectedConditions) {
         return wait.until(expectedConditions);
     }
 

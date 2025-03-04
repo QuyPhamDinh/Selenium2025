@@ -30,7 +30,7 @@ public class AngularDropDownPage extends BasePage {
     }
 
     public String getDropDownSelectedText() {
-        return wait.waitUntil(ExpectedConditions.elementToBeClickable(dropDownMain)).getText();
+        return wait.until(ExpectedConditions.elementToBeClickable(dropDownMain)).getText();
     }
 
     public void clickDropdown() {
@@ -39,17 +39,17 @@ public class AngularDropDownPage extends BasePage {
         scrollToIFrame();
         switchToIFrame();
 
-        wait.waitUntil(ExpectedConditions.elementToBeClickable(dropDownMain)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(dropDownMain)).click();
     }
 
     public void selectDropDown(String name) {
         List<WebElement> elementList = driver.findElements(By.cssSelector("kendo-list span"));
-        List<WebElement> dropdownItems = wait.waitUntil(ExpectedConditions.visibilityOfAllElements(elementList));
+        List<WebElement> dropdownItems = wait.until(ExpectedConditions.visibilityOfAllElements(elementList));
 
         Actions action = new Actions(driver);
         for (WebElement item : dropdownItems) {
             if (item.getText().equals(name)) {
-//                action.moveToElement(item).click().perform();
+//     OR            action.moveToElement(item).click().perform();
                 item.click();
                 break;
             }
