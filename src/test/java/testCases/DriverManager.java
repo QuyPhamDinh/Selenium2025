@@ -1,5 +1,7 @@
-package testBase;
+package testCases;
 
+import conf.ConfigData;
+import conf.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import logging.SeleniumEventListener;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +12,6 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringDecorator;
-import utils.ConfigData;
-import utils.ConfigReader;
 
 import java.net.MalformedURLException;
 import java.net.URL;

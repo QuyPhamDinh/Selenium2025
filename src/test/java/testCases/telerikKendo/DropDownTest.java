@@ -1,10 +1,10 @@
-package testBase.telerikKendo;
+package testCases.telerikKendo;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pom.AngularDropDownPage;
-import testBase.BaseTest;
-import testBase.DriverManager;
+import testCases.BaseTest;
+import testCases.DriverManager;
 
 public class DropDownTest extends BaseTest {
 

@@ -1,4 +1,4 @@
-package testBase;
+package testCases;
 
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -17,7 +17,7 @@ public class OptionsManager {
     }
 
     //Get Firefox Options
-    public static FirefoxOptions getFirefoxOptions () {
+    public static FirefoxOptions getFirefoxOptions() {
         FirefoxOptions options = new FirefoxOptions();
         FirefoxProfile profile = new FirefoxProfile();
         //Accept Untrusted Certificates

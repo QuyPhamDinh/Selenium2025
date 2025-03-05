@@ -3,7 +3,7 @@ package screenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import testBase.DriverManager;
+import testCases.DriverManager;
 
 public class TestListener implements ITestListener {
 

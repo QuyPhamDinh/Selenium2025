@@ -5,8 +5,8 @@ import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import testBase.BaseTest;
-import testBase.DriverManager;
+import testCases.BaseTest;
+import testCases.DriverManager;
 
 
 public class SecondTest extends BaseTest {

@@ -3,13 +3,13 @@
 <suite thread-count="2" name="Suite" parallel="tests">
     <listeners>
         <listener class-name="report.AllureListener"/>
-        <listener class-name="testBase.MyAnnotationTransformer"/>
+        <listener class-name="testCases.MyAnnotationTransformer"/>
     </listeners>
 
-    <test name="testBase.telerikKendo" parallel="methods" thread-count="2">
+    <test name="testCases.telerikKendo" parallel="methods" thread-count="2">
 
         <packages>
-            <package name="testBase.telerikKendo"/>
+            <package name="testCases.telerikKendo"/>
         </packages>
     </test> <!-- First Test -->
 </suite> <!-- Suite -->

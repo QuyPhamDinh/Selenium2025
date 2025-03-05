@@ -1,4 +1,4 @@
-package testBase;
+package testCases;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
