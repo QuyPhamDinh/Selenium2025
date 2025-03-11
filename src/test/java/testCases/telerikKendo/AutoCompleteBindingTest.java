@@ -5,10 +5,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pom.AutoCompleteDataBinding;
 import pom.Iframe;
-import testCases.BaseTest;
+import testCases.BaseTelerikKendoTest;
 import testCases.DriverManager;
 
-public class AutoCompleteBindingTest extends BaseTest {
+public class AutoCompleteBindingTest extends BaseTelerikKendoTest {
 
 
     @Test
@@ -21,7 +21,6 @@ public class AutoCompleteBindingTest extends BaseTest {
         Iframe iframe = new Iframe(DriverManager.getDriver());
         iframe.moveToIFrame();
 
-        Assert.fail();
         autoCompleteDataBinding.typeAutoCompleteTextbox(inputText);
         WebElement itemFocused = autoCompleteDataBinding.getItemFocused();
         Assert.assertTrue(itemFocused.getText().contains(inputText), "Text does not contain the expected substring!");

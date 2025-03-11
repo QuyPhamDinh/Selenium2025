@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pom.CookiesOverlay;
 import report.AllureListener;
 import screenshot.TestListener;
 
@@ -12,6 +11,8 @@ import java.net.MalformedURLException;
 
 @Listeners({AllureListener.class, TestListener.class})
 public class BaseTest {
+
+    protected WebDriver driver;
     public CapabilityFactory capabilityFactory = new CapabilityFactory();
 
     @BeforeClass
@@ -25,11 +26,9 @@ public class BaseTest {
     @Parameters(value = {"browser"})
     public void setup(@Optional("chrome") String browser, ITestResult result) throws MalformedURLException {
         System.out.println("---------------------------------------------Starting TEST " + result.getMethod().getMethodName());
-        WebDriver driver = DriverManager.getDriver();
+        driver = DriverManager.getDriver();
         driver.manage().window().maximize();
 
-        CookiesOverlay cookiesOverlay = new CookiesOverlay(driver);
-        cookiesOverlay.clickAcceptCookies();
     }
 
 

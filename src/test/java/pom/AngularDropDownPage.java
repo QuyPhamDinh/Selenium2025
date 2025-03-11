@@ -35,10 +35,6 @@ public class AngularDropDownPage extends BasePage {
 
     public void clickDropdown() {
 
-//      This scroll is needed to activate iframe loading its content
-        scrollToIFrame();
-        switchToIFrame();
-
         wait.until(ExpectedConditions.elementToBeClickable(dropDownMain)).click();
     }
 
@@ -56,16 +52,5 @@ public class AngularDropDownPage extends BasePage {
 
         }
     }
-
-    private void scrollToIFrame() {
-        scrollToElementUsingActions(driver.findElement(By.cssSelector("div[class*='demoWrap']")));
-//        OR
-        //        scrollToElementUsingActions(driver.findElement(By.xpath("//iframe[@title='Demo']")));
-    }
-
-    private void switchToIFrame() {
-        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@title='Demo']")));
-    }
-
 
 }

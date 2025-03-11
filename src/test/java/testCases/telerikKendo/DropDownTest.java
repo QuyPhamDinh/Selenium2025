@@ -1,16 +1,21 @@
 package testCases.telerikKendo;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pom.AngularDropDownPage;
-import testCases.BaseTest;
+import pom.Iframe;
+import testCases.BaseTelerikKendoTest;
 import testCases.DriverManager;
 
-public class DropDownTest extends BaseTest {
+public class DropDownTest extends BaseTelerikKendoTest {
 
     @Test
     public void testDropDown() {
-        AngularDropDownPage angularDropDownPage = new AngularDropDownPage(DriverManager.getDriver());
+        WebDriver driver = DriverManager.getDriver();
+        AngularDropDownPage angularDropDownPage = new AngularDropDownPage(driver);
+        Iframe iframe = new Iframe(driver);
+        iframe.moveToIFrame();
         angularDropDownPage.clickDropdown();
 
         String expectedItem = "Tennis";
