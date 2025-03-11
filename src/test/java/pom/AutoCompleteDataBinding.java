@@ -18,7 +18,7 @@ public class AutoCompleteDataBinding extends BasePage {
     }
 
     @Override
-    void goToPage() {
+    protected void goToPage() {
         driver.get("https://www.telerik.com/kendo-angular-ui/components/dropdowns/autocomplete/data-binding");
     }
 

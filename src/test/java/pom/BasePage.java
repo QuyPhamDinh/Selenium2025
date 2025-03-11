@@ -12,7 +12,7 @@ public abstract class BasePage {
     protected WebDriver driver;
     protected Waiting wait;
 
-    abstract void goToPage();
+    abstract protected void goToPage();
 
 
     public BasePage(WebDriver driver) {

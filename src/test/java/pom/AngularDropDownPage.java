@@ -12,12 +12,7 @@ public class AngularDropDownPage extends BasePage {
     private final String url = "https://www.telerik.com/kendo-angular-ui/components/dropdowns";
 
     private final By dropDownMain = By.cssSelector("kendo-dropdownlist .k-input-value-text");
-
-
-    public AngularDropDownPage() {
-        super();
-
-    }
+    
 
     public AngularDropDownPage(WebDriver driver) {
         super(driver);
@@ -25,7 +20,7 @@ public class AngularDropDownPage extends BasePage {
     }
 
     @Override
-    void goToPage() {
+    protected void goToPage() {
         driver.get(url);
     }
 

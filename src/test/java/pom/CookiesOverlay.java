@@ -22,7 +22,7 @@ public class CookiesOverlay extends BasePage {
     }
 
     @Override
-    void goToPage() {
+    protected void goToPage() {
         driver.get("https://www.telerik.com/kendo-angular-ui/components/");
     }
 }

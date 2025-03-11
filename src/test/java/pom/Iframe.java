@@ -10,7 +10,7 @@ public class Iframe extends BasePage {
     }
 
     @Override
-    void goToPage() {
+    protected void goToPage() {
 
     }
 
