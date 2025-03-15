@@ -31,8 +31,8 @@ public abstract class BasePage {
         actions.moveToElement(element).perform();
     }
 
-    protected void scrollToElementUsingJS() {
-        WebElement element = driver.findElement(By.id("elementId"));
+    protected void scrollToElementUsingJS(WebElement element) {
+        
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
     }
