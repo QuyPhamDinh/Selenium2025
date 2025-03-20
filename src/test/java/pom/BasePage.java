@@ -14,6 +14,9 @@ public abstract class BasePage {
 
     abstract protected void goToPage();
 
+    public String getCurrentURL() {
+        return driver.getCurrentUrl();
+    }
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -32,7 +35,7 @@ public abstract class BasePage {
     }
 
     protected void scrollToElementUsingJS(WebElement element) {
-        
+
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
     }

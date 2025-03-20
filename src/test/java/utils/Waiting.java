@@ -52,4 +52,16 @@ public class Waiting {
             }
         });
     }
+
+    public void clickByIgnoringElementIntercepted(WebElement e) {
+        wait.until(driver -> {
+            try {
+                e.click(); // Attempt to click
+                return true; // Click successful, exit wait
+            } catch (ElementClickInterceptedException ex) {
+                System.out.println("Click intercepted, retrying...");
+                return false; // Continue waiting and retrying
+            }
+        });
+    }
 }

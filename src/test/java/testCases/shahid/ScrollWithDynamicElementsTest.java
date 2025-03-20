@@ -15,6 +15,20 @@ public class ScrollWithDynamicElementsTest extends BaseTest {
         ShahidHomePage shahidHomePage = new ShahidHomePage(DriverManager.getDriver());
         shahidHomePage.scrollTillNoNewDynamicElementGenerated(dynamicElementLocator);
 
+        System.out.println("Scrolling is DONE");
         Assert.assertTrue(shahidHomePage.isContactUsDisplayed());
+
+    }
+
+
+    @Test
+    void scrollToBottomWhileDynamicElementGenerated2() {
+
+        ShahidHomePage shahidHomePage = new ShahidHomePage(DriverManager.getDriver());
+        shahidHomePage.clickOKCookies();
+        shahidHomePage.scrollTillDynamicElementFound();
+
+        shahidHomePage.clickDynamicElement();
+        shahidHomePage.waitForURLContainsDynamicElementHef();
     }
 }
