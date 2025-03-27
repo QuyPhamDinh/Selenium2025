@@ -53,6 +53,8 @@ public class RegistrationPage extends BasePage {
     @FindBy(css = "#rightPanel p")
     private WebElement successfulMessage;
 
+    private LeftPanel leftPanel;
+
     @Override
     protected void goToPage() {
         driver.get("https://parabank.parasoft.com/parabank/register.htm");
@@ -61,6 +63,7 @@ public class RegistrationPage extends BasePage {
     public RegistrationPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+        leftPanel = new LeftPanel(driver);
     }
 
     public void enterFirstName(String fName) {
@@ -131,5 +134,17 @@ public class RegistrationPage extends BasePage {
 
     public String getWelcomeMessage() {
         return welcomeMessage.getText();
+    }
+
+    public LeftPanel getLeftPanel() {
+        return leftPanel;
+    }
+
+    public boolean isLogoutPresent() {
+        return leftPanel.isLogoutLinkPresent();
+    }
+
+    public void clickLogout() {
+        leftPanel.clickLogoutLink();
     }
 }

@@ -17,7 +17,6 @@ public class Users {
     private String password;
     private String confirmPassword;
 
-
     public Users(String firstName, String lastName, String address, String city, String state,
                  String zipCode, String phoneNumber, String ssn, String username,
                  String password, String confirmPassword) {
