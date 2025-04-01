@@ -7,8 +7,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import model.Users;
 import pom.parabank.RegistrationPage;
-import testCases.DriverManager;
-import testDataManagement.TestDataManager;
+import testcases.DriverManager;
+import testdatamanagement.TestDataManager;
 
 public class RegisterStepdefs extends Steps {
 
@@ -18,7 +18,7 @@ public class RegisterStepdefs extends Steps {
 
     @Given("the user navigates to the registration page")
     public void theUserNavigatesToTheRegistrationPage() {
-        System.out.println("Step theUserNavigatesToTheRegistrationPage");
+        logger.info("Step theUserNavigatesToTheRegistrationPage");
         registrationPage = new RegistrationPage(DriverManager.getDriver());
         faker = new Faker();
     }

@@ -1,4 +1,4 @@
-package testDataManagement;
+package testdatamanagement;
 
 import java.util.List;
 import java.util.Map;

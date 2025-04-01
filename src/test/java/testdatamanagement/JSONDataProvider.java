@@ -1,4 +1,4 @@
-package testDataManagement;
+package testdatamanagement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

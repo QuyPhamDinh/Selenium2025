@@ -8,11 +8,11 @@
     <test name="com.FirstTest" parallel="methods" thread-count="5">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="FirstTest">
+            <class name="multithreadtest.FirstTest">
                 <methods>
-                    <include name="GOOGLE1"/>
-                    <include name="GOOGLE2"/>
-                    <include name="GOOGLE3"/>
+                    <include name="google1"/>
+                    <include name="google2"/>
+                    <include name="google3"/>
                 </methods>
             </class>
         </classes>
@@ -20,10 +20,10 @@
     <test name="com.SecondTest" parallel="methods" thread-count="5">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="SecondTest">
+            <class name="multithreadtest.SecondTest">
                 <methods>
-                    <include name="GOOGLE4"/>
-                    <include name="YANDEX"/>
+                    <include name="google4"/>
+                    <include name="yandex"/>
                 </methods>
             </class>
         </classes>

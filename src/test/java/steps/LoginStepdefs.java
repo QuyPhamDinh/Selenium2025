@@ -7,8 +7,8 @@ import model.Users;
 import org.openqa.selenium.WebDriver;
 import pom.parabank.LeftPanel;
 import pom.parabank.LoginForm;
-import testCases.DriverManager;
-import testDataManagement.TestDataManager;
+import testcases.DriverManager;
+import testdatamanagement.TestDataManager;
 
 public class LoginStepdefs extends Steps {
     private WebDriver driver;

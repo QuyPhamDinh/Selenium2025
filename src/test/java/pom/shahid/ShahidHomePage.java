@@ -67,7 +67,7 @@ public class ShahidHomePage extends BasePage {
             JavascriptExecutor je = (JavascriptExecutor) driver;
             try {
                 dynamicElement = myWait.until(ExpectedConditions.elementToBeClickable(dynamicElementBy));
-                System.out.println("scrollTimes : " + scrollTimes);
+                logger.info("scrollTimes : " + scrollTimes);
                 return dynamicElement;
 
             } catch (TimeoutException e) {

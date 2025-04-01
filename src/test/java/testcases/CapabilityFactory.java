@@ -1,4 +1,4 @@
-package testCases;
+package testcases;
 
 import org.openqa.selenium.Capabilities;
 

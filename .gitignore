@@ -1,7 +1,7 @@
 target/
 screenshots/
 allure-results/
-logs/
+logs/*.*
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

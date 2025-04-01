@@ -1,10 +1,10 @@
-package testCases.practiceExpand;
+package testcases.practiceExpand;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pom.practiceExpandTesting.GeoLocationPage;
-import testCases.BaseTest;
-import testCases.DriverManager;
+import testcases.BaseTest;
+import testcases.DriverManager;
 
 public class GeoLocationTest extends BaseTest {
 

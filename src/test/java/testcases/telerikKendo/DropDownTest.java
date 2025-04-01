@@ -1,12 +1,12 @@
-package testCases.telerikKendo;
+package testcases.telerikKendo;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pom.AngularDropDownPage;
 import pom.Iframe;
-import testCases.BaseTelerikKendoTest;
-import testCases.DriverManager;
+import testcases.BaseTelerikKendoTest;
+import testcases.DriverManager;
 
 public class DropDownTest extends BaseTelerikKendoTest {
 

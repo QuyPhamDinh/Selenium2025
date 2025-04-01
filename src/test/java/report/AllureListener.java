@@ -2,18 +2,22 @@ package report;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import testCases.DriverManager;
+import testcases.DriverManager;
 
 import java.io.ByteArrayInputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AllureListener implements ITestListener {
+
+    protected final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     public void onTestFailure(ITestResult result) {
@@ -31,8 +35,8 @@ public class AllureListener implements ITestListener {
         if (driver == null) {
             return new byte[0];
         }
-        System.out.println("Allure saveScreenshot.....");
-        System.out.println("Thread Id: " + Thread.currentThread().getId());
+        logger.info("Allure saveScreenshot.....");
+        logger.info("Thread Id: " + Thread.currentThread().getId());
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }

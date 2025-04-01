@@ -1,4 +1,4 @@
-package testCases;
+package testcases;
 
 import conf.ConfigData;
 import conf.ConfigReader;

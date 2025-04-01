@@ -1,5 +1,7 @@
 package pom;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -9,10 +11,13 @@ import utils.Waiting;
 import java.time.Duration;
 
 public abstract class BasePage {
+
+    protected final Logger logger = LogManager.getLogger(this.getClass());
+
     protected WebDriver driver;
     protected Waiting wait;
 
-    abstract protected void goToPage();
+    protected abstract void goToPage();
 
     public String getCurrentURL() {
         return driver.getCurrentUrl();
@@ -77,7 +82,7 @@ public abstract class BasePage {
                 // Check if the expected element is visible
                 WebElement targetElement = driver.findElement(By.cssSelector(targetElementLocator));
                 if (targetElement.isDisplayed()) {
-                    System.out.println("Element found: " + targetElementLocator);
+                    logger.info("Element found: " + targetElementLocator);
                     return;
                 }
             } catch (NoSuchElementException e) {
@@ -98,7 +103,7 @@ public abstract class BasePage {
             }
         }
 
-        System.out.println("Reached max scroll limit, element not found: " + targetElementLocator);
+        logger.info("Reached max scroll limit, element not found: " + targetElementLocator);
     }
 
 
