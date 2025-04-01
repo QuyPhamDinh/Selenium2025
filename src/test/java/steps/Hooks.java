@@ -3,9 +3,12 @@ package steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import testCases.DriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import testcases.DriverManager;
 
 public class Hooks {
+    protected final Logger logger = LogManager.getLogger(this.getClass());
 
     @Before
     public void setup() {
@@ -14,7 +17,7 @@ public class Hooks {
 
     @After
     public void tearDown() {
-        System.out.println("Closing browser after scenario...");
+        logger.info("Closing browser after scenario...");
         if (DriverManager.getDriver() != null) {
             DriverManager.getDriver().quit();
         }

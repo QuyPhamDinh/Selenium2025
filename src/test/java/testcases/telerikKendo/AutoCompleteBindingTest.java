@@ -1,12 +1,12 @@
-package testCases.telerikKendo;
+package testcases.telerikKendo;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pom.AutoCompleteDataBinding;
 import pom.Iframe;
-import testCases.BaseTelerikKendoTest;
-import testCases.DriverManager;
+import testcases.BaseTelerikKendoTest;
+import testcases.DriverManager;
 
 public class AutoCompleteBindingTest extends BaseTelerikKendoTest {
 

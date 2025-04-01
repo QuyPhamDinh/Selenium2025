@@ -1,5 +1,7 @@
 package utils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -8,6 +10,7 @@ import java.time.Duration;
 
 public class Waiting {
 
+    private static final Logger logger = LogManager.getLogger(Waiting.class);
     private final WebDriverWait wait;
 
     public Waiting(WebDriver driver, int timeout) {
@@ -47,7 +50,7 @@ public class Waiting {
                 element.click(); // Attempt to click
                 return true; // Click successful, exit wait
             } catch (ElementClickInterceptedException e) {
-                System.out.println("Click intercepted, retrying...");
+                logger.info("Click intercepted, retrying...");
                 return false; // Continue waiting and retrying
             }
         });
@@ -59,7 +62,7 @@ public class Waiting {
                 e.click(); // Attempt to click
                 return true; // Click successful, exit wait
             } catch (ElementClickInterceptedException ex) {
-                System.out.println("Click intercepted, retrying...");
+                logger.info("Click intercepted, retrying...");
                 return false; // Continue waiting and retrying
             }
         });

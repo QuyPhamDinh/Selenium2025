@@ -1,6 +1,8 @@
 package screenshot;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -11,10 +13,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ScreenshotUtil {
+    protected static final Logger logger = LogManager.getLogger(ScreenshotUtil.class);
 
     public static void takeScreenshot(WebDriver driver, String testName) {
         if (driver == null) {
-            System.out.println("WebDriver is null, cannot take screenshot!");
+            logger.info("WebDriver is null, cannot take screenshot!");
             return;
         }
 
@@ -29,9 +32,9 @@ public class ScreenshotUtil {
 
             // Ensure directory exists
             FileUtils.copyFile(srcFile, destFile);
-            System.out.println("Screenshot saved: " + destFile.getAbsolutePath());
+            logger.info("Screenshot saved: " + destFile.getAbsolutePath());
         } catch (IOException e) {
-            System.out.println("Failed to take screenshot: " + e.getMessage());
+            logger.info("Failed to take screenshot: " + e.getMessage());
         }
     }
 }

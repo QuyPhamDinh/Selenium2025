@@ -1,11 +1,11 @@
-package testCases.practiceExpand;
+package testcases.practiceExpand;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pom.practiceExpandTesting.ShadowDom;
-import testCases.BaseTest;
-import testCases.DriverManager;
+import testcases.BaseTest;
+import testcases.DriverManager;
 
 public class ShadowDomTest extends BaseTest {
 

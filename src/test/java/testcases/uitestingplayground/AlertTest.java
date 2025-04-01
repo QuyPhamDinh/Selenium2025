@@ -1,10 +1,10 @@
-package testCases.uitestingplayground;
+package testcases.uitestingplayground;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pom.uitestingplayground.AlertPage;
-import testCases.BaseTest;
-import testCases.DriverManager;
+import testcases.BaseTest;
+import testcases.DriverManager;
 
 public class AlertTest extends BaseTest {
 

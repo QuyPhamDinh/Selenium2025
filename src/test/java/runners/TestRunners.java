@@ -2,10 +2,12 @@ package runners;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import testCases.DriverManager;
+import testcases.DriverManager;
 
 @CucumberOptions(
         features = "src/test/resources/features",
@@ -14,16 +16,18 @@ import testCases.DriverManager;
 )
 public class TestRunners extends AbstractTestNGCucumberTests {
 
+    protected final Logger logger = LogManager.getLogger(this.getClass());
+
     @BeforeClass
     public void setup() {
-        System.out.println("Starting the test suite...");
+        logger.info("Starting the test suite...");
         WebDriver driver = DriverManager.getDriver();
         driver.manage().window().maximize();
     }
 
     @AfterClass
     public void tearDown() {
-        System.out.println("Test suite execution completed.");
+        logger.info("Test suite execution completed.");
         DriverManager.getDriver().quit();
     }
 }
