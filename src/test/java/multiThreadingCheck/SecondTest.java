@@ -1,3 +1,5 @@
+package multiThreadingCheck;
+
 import io.qameta.allure.Allure;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
