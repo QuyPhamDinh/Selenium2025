@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import model.Users;
+import pom.parabank.LeftPanel;
 import pom.parabank.RegistrationPage;
 import testCases.DriverManager;
 import testDataManagement.TestDataManager;
@@ -49,7 +50,13 @@ public class RegisterStepdefs extends Steps {
     @And("the user clicks on the {string} button")
     public void theUserClicksOnTheButton(String arg0) {
         registrationPage.clickRegister();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
+
 
     @Then("the user should see a successful registration message")
     public void theUserShouldSeeASuccessfulRegistrationMessage() {
@@ -65,5 +72,13 @@ public class RegisterStepdefs extends Steps {
     @And("the user clicks on the Logout link")
     public void theUserClicksOnTheLogoutLink() {
         registrationPage.clickLogout();
+    }
+
+    @And("the user clicks on the open new account link")
+    public void theUserClicksOnTheOpenNewAccountLink() {
+        LeftPanel leftPanel = new LeftPanel(DriverManager.getDriver());
+        leftPanel.clickOpenNewAccount();
+//        registrationPage.saveCookies();
+        registrationPage.saveLocaStorage();
     }
 }

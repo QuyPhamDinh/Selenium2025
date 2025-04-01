@@ -11,6 +11,10 @@ public class LeftPanel extends BasePage {
     @FindBy(css = "#leftPanel a[href='logout.htm']")
     WebElement logoutLink;
 
+    @FindBy(css = "#leftPanel a[href='openaccount.htm']")
+    WebElement openNewAccount;
+
+
     public LeftPanel(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -29,4 +33,10 @@ public class LeftPanel extends BasePage {
         logoutLink.click();
         return this;
     }
+
+    public LeftPanel clickOpenNewAccount() {
+        openNewAccount.click();
+        return this;
+    }
+
 }

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" name="Suite" parallel="tests" >
+<suite thread-count="2" name="Suite" parallel="tests">
 
     <test name="com.AllTest" parallel="methods" thread-count="5">
 
         <classes>
 
-                    <class name="SecondTest">
-                        <parameter name="browser" value="chrome"/>
-                    </class>
-            <class name="FirstTest">
+            <class name="multiThreadingCheck.SecondTest">
+                <parameter name="browser" value="chrome"/>
+            </class>
+            <class name="multiThreadingCheck.FirstTest">
                 <parameter name="browser" value="firefox"/>
             </class>
         </classes>

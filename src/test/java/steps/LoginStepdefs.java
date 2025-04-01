@@ -22,6 +22,9 @@ public class LoginStepdefs extends Steps {
         this.loginForm = new LoginForm(driver);
         this.leftPanel = new LeftPanel(driver);
         this.loginForm.goToPage();
+        this.loginForm.loadCookies();
+        this.loginForm.loadLocalStorage();
+
     }
 
     @When("the user enters the credentials from registration form")

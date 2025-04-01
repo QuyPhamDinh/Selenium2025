@@ -1,12 +1,18 @@
 package pom.parabank;
 
 import model.Users;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pom.BasePage;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Set;
 
 public class RegistrationPage extends BasePage {
 
@@ -146,5 +152,35 @@ public class RegistrationPage extends BasePage {
 
     public void clickLogout() {
         leftPanel.clickLogoutLink();
+    }
+
+    public void saveCookies() {
+        Set<Cookie> cookies = driver.manage().getCookies();
+
+        // Save cookies to a JSON file
+        try (FileWriter writer = new FileWriter("cookies.txt")) {
+            for (Cookie cookie : cookies) {
+                writer.write(cookie.getName() + ";" + cookie.getValue() + ";" +
+                        cookie.getDomain() + ";" + cookie.getPath() + ";" +
+                        cookie.getExpiry() + ";" + cookie.isSecure() + ";" +
+                        cookie.isHttpOnly() + ";" + cookie.getSameSite() + "\n");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void saveLocaStorage() {
+        //Saving Local storage
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String localStorage = (String) js.executeScript("return JSON.stringify(window.localStorage);");
+        try (FileWriter writer = new FileWriter("localStorage.txt")) {
+            writer.write(localStorage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 }
